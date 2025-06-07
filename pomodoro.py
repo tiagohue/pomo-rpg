@@ -1,5 +1,5 @@
 import time
-import ui
+import ui.utils as utils
 from gamification import load_data
 
 def countdown(minutes):
@@ -8,7 +8,7 @@ def countdown(minutes):
     data = load_data()
 
     for passed in range(0, time_max + 1, 1):
-        ui.draw_time_progress_bar(passed, time_max)
+        utils.draw_time_progress_bar(passed, time_max)
         time.sleep(1)
     print("\nPomodoro completed!")
 
