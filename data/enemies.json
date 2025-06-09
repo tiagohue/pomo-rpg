@@ -1,0 +1,15 @@
+{
+    "slime": {
+        "name": "slime",
+        "xp": 1,
+        "skills": {
+            "fight": 1,
+            "physique": -1,
+            "will": -1
+        },
+        "stress": {
+            "physical": 2,
+            "mental": 2
+        }
+    }
+}

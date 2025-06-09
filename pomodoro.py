@@ -1,17 +1,26 @@
 import time
-import ui.utils as utils
-from gamification import load_data
+import threading
+import ui.components as components
 
-def countdown(minutes):
+def wait_cancel(cancel_event):
+    while not cancel_event.is_set():
+        key = input()
+        if key.strip() == "1":
+            cancel_event.set()
+
+def run_pomodoro(minutes):
     time_max = minutes * 60
 
-    data = load_data()
+    print("Press 1 to cancel pomodoro...")
+    cancel_event = threading.Event()
+    threading.Thread(target=wait_cancel, args=(cancel_event, ), daemon=True).start()
 
     for passed in range(0, time_max + 1, 1):
-        utils.draw_time_progress_bar(passed, time_max)
+        if cancel_event.is_set():
+            input("Pomodoro canceled!")
+            return False
+        components.draw_time_progress_bar(passed, time_max)
         time.sleep(1)
-    print("\nPomodoro completed!")
 
-def run_pomodoro():
-    countdown(25)
+    print("\nPomodoro completed!")
     return True

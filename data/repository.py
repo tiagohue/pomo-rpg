@@ -1,13 +1,9 @@
 import os
 import json
-from playsound import playsound
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-SAVE_FILE = os.path.join(BASE_DIR, 'data', 'save.json')
-ALARM_FILE = os.path.join(BASE_DIR, "sounds", "alarm.wav")
-
-def play_alarm():
-    playsound(ALARM_FILE)
+SAVE_FILE = os.path.join(BASE_DIR, 'save.json')
+ENEMIES_FILE = os.path.join(BASE_DIR, 'enemies.json')
 
 def load_data():
     with open(SAVE_FILE, 'r') as f:
@@ -31,3 +27,7 @@ def update_xp(xp_gained):
         data['xp'] = 0
         print("🎉 Você subiu de nível!")
     save_data(data)
+
+def get_random_enemy():
+    data = json.load(open(ENEMIES_FILE, 'r'))
+    return data["slime"]

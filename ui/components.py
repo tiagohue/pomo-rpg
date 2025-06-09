@@ -1,4 +1,4 @@
-from gamification import load_data
+from data.repository import load_data
 import os
 import platform
 import shutil
@@ -9,13 +9,16 @@ def clear_terminal():
   else:
     os.system("clear")
 
-def display_status(data):
+def display_status():
+  data = load_data()
+
   print("=== POMO RPG ===")
-  print(f"Level: {data["level"]}  |  XP: {data["xp"]}/{data["level"]+1}  |  Pomos: {data["pomos"]}")
   print(f"Name: {data["name"]}")
+  print(f"Level: {data["level"]}  |  XP: {data["xp"]}/{data["level"]+1}  |  Pomos: {data["pomos"]}\n")
+
+def display_character():
   print("Character:")
-  print(r"""
-  / \
+  print(r"""  / \
   | |
   |.|
   |.|
@@ -33,8 +36,7 @@ def display_status(data):
          | |   | |
          \ /   | \___
          / |   \_____\
-         `-'
-    """)
+         `-'""")
 
 def draw_time_progress_bar(progress, progress_max):
   # Retorna (colunas, linhas) do terminal
