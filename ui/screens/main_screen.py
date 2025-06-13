@@ -1,7 +1,7 @@
 from data.repository import update_pomos
 from pomodoro import run_pomodoro
 from ui.screens.status_screen import status_screen
-from ui.screens.time_tower_screen import time_tower_screen
+from ui.screens.chronos_tower_screen import time_tower_screen
 from ui.components import clear_terminal, display_character, display_status
 from utils import play_alarm
 
@@ -9,7 +9,7 @@ def main_menu():
     print("Main Menu:")
     print("1 - Start pomo")
     print("2 - See status")
-    print("3 - Enter time tower")
+    print("3 - Enter Chronos Tower")
     print("4 - Exit")
     return input()
 

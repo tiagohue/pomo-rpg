@@ -19,24 +19,23 @@ def display_status():
 def display_character():
   print("Character:")
   print(r"""  / \
-  | |
   |.|
   |.|
-  |:|      __
-,_|:|_,   /  )
-  (Oo    / _I_
-   +\ \  || __|
-      \ \||___|
-        \ /.:.\-\
-         |.:. /-----\
-         |___|::oOo::|
-         /   |:<_T_>:|
-        |_____\ ::: /
-         | |  \ \:/
-         | |   | |
-         \ /   | \___
-         / |   \_____\
-         `-'""")
+  |:|     __
+,_|:|_,  /  )
+  (Do   / _I_
+   +\ \ || __|
+     \ \||___|_
+      \  /.:.\ \
+       \|.:::/-----\
+        |___|::oOo::|
+        /   |:(III):|
+       |_____\ ºOº /
+        | |  \ \:/
+        |_|   |_|
+        \ /   \ /__
+        / |   |____\
+        `-'""")
 
 def draw_time_progress_bar(progress, progress_max):
   # Retorna (colunas, linhas) do terminal

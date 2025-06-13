@@ -15,8 +15,8 @@ def status_screen():
     for skill in data["skills"]:
         print(f"{data["skills"][skill]} : {skill}")
     print()
-    print(f"Physical Stress: {data["stress"]["physical"]}")
-    print(f"Mental Stress: {data["stress"]["mental"]}")
+    print(f"Physical Stress: {data["stress"]["physical"][0]}/{data["stress"]["physical"][1]}")
+    print(f"Mental Stress: {data["stress"]["mental"][0]}/{data["stress"]["mental"][1]}")
     print()
 
     answer = status_menu()
