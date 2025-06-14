@@ -1,12 +1,20 @@
 import os
+import platform
 from random import randint
-from playsound import playsound
+import subprocess
+import sys
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ALARM_FILE = os.path.join(BASE_DIR, "sounds", "alarm.wav")
 
 def play_alarm():
-    playsound(ALARM_FILE)
+    system = platform.system()
+
+    if "ANDROID_ROOT" in os.environ or "com.termux" in sys.executable:
+        subprocess.run(["termux-media-player", "play", ALARM_FILE])
+    else:
+        from playsound import playsound
+        playsound(ALARM_FILE)
 
 def throw_fate_dices():
     sum = 0
