@@ -18,15 +18,22 @@ def update_pomos():
     data["pomos"] += 1
     save_data(data)
 
-# remake the xp system later:
 def update_xp(xp_gained):
     data = load_data()
-    data['xp'] += xp_gained
-    if data['xp'] >= data["level"] + 1:
-        data['level'] += 1
-        data['xp'] = 0
-        print("🎉 Você subiu de nível!")
+    xp = data["xp"]
+    level = data["level"]
+    xp += xp_gained
+
+    while xp >= level + 1:
+        xp = xp - (level + 1)
+        level += 1
+        print(f"🎉 Congratulations! Now your level is {level}!")
+
+    data["xp"] = xp
+    data["level"] = level
+
     save_data(data)
+    input("Press enter to continue...")
 
 def get_random_enemy():
     data = json.load(open(ENEMIES_FILE, 'r'))

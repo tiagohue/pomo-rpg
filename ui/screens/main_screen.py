@@ -2,7 +2,7 @@ from data.repository import update_pomos
 from pomodoro import run_pomodoro
 from ui.screens.status_screen import status_screen
 from ui.screens.chronos_tower_screen import time_tower_screen
-from ui.components import clear_terminal, display_character, display_status
+from ui.components import clear_terminal, display_character, display_status, display_stresses
 from utils import play_alarm
 
 def main_menu():
@@ -18,6 +18,9 @@ def main_screen():
         clear_terminal()
         display_status()
         display_character()
+        display_stresses()
+        print()
+        
         menu_answer = main_menu()
 
         match menu_answer:

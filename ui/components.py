@@ -46,3 +46,8 @@ def draw_time_progress_bar(progress, progress_max):
   filled = int((progress / progress_max) * width)
   bar = '#' * filled + '-' * (width - filled)
   print(f"\r⏳ [{bar}] {progress // 60:02}/{progress_max // 60:02}", end="")
+
+def display_stresses():
+  data = load_data()
+  print(f"Physical Stress: {data["stress"]["physical"][0]}/{data["stress"]["physical"][1]}")
+  print(f"Mental Stress: {data["stress"]["mental"][0]}/{data["stress"]["mental"][1]}")

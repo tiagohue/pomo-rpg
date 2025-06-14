@@ -11,7 +11,10 @@ def play_alarm():
     system = platform.system()
 
     if "ANDROID_ROOT" in os.environ or "com.termux" in sys.executable:
-        subprocess.run(["termux-media-player", "play", ALARM_FILE])
+        # todo: make the sound work for termux
+        # subprocess.run(["termux-media-player", "play", ALARM_FILE])
+        
+        return
     else:
         from playsound import playsound
         playsound(ALARM_FILE)
@@ -28,5 +31,5 @@ def throw_fate_dices():
             print(f"[+] ", end="")
         sum += rand
     
-    print(f"= {sum}")
+    print(f"= {sum}", end=" ")
     return sum

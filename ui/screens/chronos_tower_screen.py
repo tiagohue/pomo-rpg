@@ -1,4 +1,5 @@
 from random import randint
+import time
 from ui.screens.combat_screen import combat_screen
 from ui.components import clear_terminal, display_status
 
@@ -17,7 +18,7 @@ def enter_random_room():
     match rand:
         case 1:
             # room with monsters
-            combat_screen()
+            return combat_screen()
         case 2:
             # room perfect to camp
             print("todo")
@@ -28,6 +29,7 @@ def enter_random_room():
 .-'..`-.
 `-'.'`-'
             '''
+            time.sleep(1)
         case _:
             print("unespected error")
 
@@ -44,7 +46,8 @@ def time_tower_screen():
         answer = chronos_tower_menu()
         match answer:
             case "1":
-                enter_random_room()
+                if enter_random_room():
+                    break
             case "2":
                 try_to_rest()
             case "3":
