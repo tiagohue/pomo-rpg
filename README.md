@@ -10,16 +10,18 @@
 Clone este repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-projeto.git
-cd seu-projeto
+git clone https://github.com/tiagohue/pomo-rpg
+cd pomo-rpg
 ```
 
 Crie um ambiente virtual (recomendado):
 
 ```bash
 python -m venv venv
-source venv/bin/activate        # Linux/macOS
-venv\Scripts\activate           # Windows
+# Linux/macOS:
+source venv/bin/activate
+# Windows:
+venv\Scripts\activate
 ```
 
 Instale as dependências:
