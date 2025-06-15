@@ -1,7 +1,7 @@
 {
     "slime": {
         "name": "slime",
-        "xp": 6,
+        "xp": 1,
         "skills": {
             "fight": 1,
             "physique": -1,

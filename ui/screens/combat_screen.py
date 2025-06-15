@@ -25,7 +25,7 @@ def combat_screen():
         display_status()
         display_stresses()
 
-        print("\n[todo: display monster]\n")
+        print("[todo: display monster]\n")
 
         answer = display_combat_menu()
         match answer:
@@ -60,7 +60,6 @@ def combat_screen():
                     print(f"And gained {enemy["xp"]} xp point!")
                     update_xp(enemy["xp"])
 
-                    time.sleep(2)
                     break
                                 
                 # Enemy attack:

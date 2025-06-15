@@ -2,12 +2,13 @@
     "name": "Tigarius III",
     "level": 0,
     "xp": 0,
-    "pomos": 100,
+    "pomos": 102,
     "description": "[insert description]",
     "skills": {
         "fight": 2,
         "physique": 1,
-        "will": 1
+        "camp": 1,
+        "will": 0
     },
     "stress": {
         "physical": [
@@ -15,8 +16,8 @@
             6
         ],
         "mental": [
-            6,
-            6
+            4,
+            4
         ]
     }
 }

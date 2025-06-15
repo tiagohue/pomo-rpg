@@ -51,3 +51,4 @@ def display_stresses():
   data = load_data()
   print(f"Physical Stress: {data["stress"]["physical"][0]}/{data["stress"]["physical"][1]}")
   print(f"Mental Stress: {data["stress"]["mental"][0]}/{data["stress"]["mental"][1]}")
+  print()

@@ -19,7 +19,6 @@ def main_screen():
         display_status()
         display_character()
         display_stresses()
-        print()
         
         menu_answer = main_menu()
 

@@ -1,41 +1,36 @@
 from random import randint
 import time
+from data.repository import load_data, save_data
+from ui.screens.camp_screen import camp_screen
 from ui.screens.combat_screen import combat_screen
-from ui.components import clear_terminal, display_status
+from ui.components import clear_terminal, display_status, display_stresses
 
 
 def chronos_tower_menu():
     print("Chronos Tower Menu:")
     print("1 - Go to next room")
-    print("2 - Try to rest")
+    print("2 - Try to rest [todo]")
     print("3 - Exit")
     return input()
 
 def enter_random_room():
-    # todo: randomize the next room
-    rand = randint(1, 2)
+    data = load_data()
+    data["pomos"] -= 1
+    save_data(data)
+    
+    # randomize the next room
+    rand = randint(1, 4)
 
-    match rand:
-        case 1:
-            # room with monsters
-            return combat_screen()
-        case 2:
-            # room perfect to camp
-            print("todo")
-            ''' use the campfire:
-   .(
-  /%/\
- (%(%))
-.-'..`-.
-`-'.'`-'
-            '''
-            time.sleep(1)
-        case _:
-            print("unespected error")
+    if rand in range(1, 3):
+        # room with monsters
+        return combat_screen()
+    else:
+        camp_screen()
 
 def try_to_rest():
     # todo: test if player rested well or was interrupted by enemies
     print("todo")
+    time.sleep(1)
 
 def time_tower_screen():
     enter_random_room()
@@ -43,6 +38,7 @@ def time_tower_screen():
     while True:
         clear_terminal()
         display_status()
+        display_stresses()
         answer = chronos_tower_menu()
         match answer:
             case "1":

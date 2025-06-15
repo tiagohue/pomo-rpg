@@ -3,7 +3,7 @@ from ui.components import clear_terminal, display_character, display_status, dis
 
 def status_menu():
     print("Status Menu:")
-    print("press enter - Exit")
+    print("Press enter to Exit")
     return input()
 
 def status_screen():
@@ -17,6 +17,5 @@ def status_screen():
 
     print()
     display_stresses()
-    print()
 
     answer = status_menu()
